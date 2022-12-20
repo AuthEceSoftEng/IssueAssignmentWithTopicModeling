@@ -14,7 +14,7 @@ projects = ["AMBARI", "ARROW", "CASSANDRA", "CB", "DATALAB", "FLINK", "GEODE", "
 model_keys = ['title', 'title_description', 'title_description_labels', 'title_description_topics', 'all']
 model_titles = ['Title', 'Title & Desc.', 'Title & Desc. & Labels', 'Title & Desc. & Topics', 'All']
 
-# Produce Tables 3 and 4 of paper
+# Produce Tables 3, 4 and 5 of paper
 print("Accuracies")
 with open(os.path.join(resultsdatafolder, 'Accuracies.txt'), 'w') as outfile:
 	for project in projects:

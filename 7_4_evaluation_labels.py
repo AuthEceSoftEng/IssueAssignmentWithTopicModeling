@@ -16,8 +16,8 @@ model_keys = ['labels', 'labels_top_terms']
 model_titles = ['Simple Labels', 'Enhanced Labels']
 
 # Produce Figures 7 and 8 of paper
-accuracy_simple, fmeasure_simple = [], []
-accuracy_enhanced, fmeasure_enhanced = [], []
+accuracy_simple, fmeasure_simple = [], [], []
+accuracy_enhanced, fmeasure_enhanced = [], [], []
 for project in projects:
 	with gzip.open(os.path.join(datafolder, "5_" + project + "_" + str(num_assignees) + "_assignees" + "_results.json.gz"), 'r') as infile:
 		results = json.loads(infile.read().decode('utf-8'))
@@ -52,8 +52,6 @@ plt.tight_layout()
 plt.savefig(os.path.join(resultsdatafolder, "AccuracyLabels.eps"))
 plt.savefig(os.path.join(resultsdatafolder, "AccuracyLabels.pdf"))
 
-fmeasure_simple = [0.22, 0.09, 0.6, 0.49, 0.64, 0.27, 0.24, 0.23, 0.68, 0.47, 0.49, 0.4]
-fmeasure_enhanced = [0.46, 0.32, 0.62, 0.49, 0.65, 0.39, 0.28, 0.33, 0.72, 0.51, 0.53, 0.47]
 fig, ax = plt.subplots(figsize=(4.4, 3.0))
 rects1 = plt.bar(index, fmeasure_simple, bar_width, label='Simple Labels')
 rects2 = plt.bar(index + bar_width, fmeasure_enhanced, bar_width, label='Enhanced Labels')
@@ -65,5 +63,3 @@ plt.legend()
 plt.tight_layout()
 plt.savefig(os.path.join(resultsdatafolder, "FmeasureLabels.eps"))
 plt.savefig(os.path.join(resultsdatafolder, "FmeasureLabels.pdf"))
-#plt.show()
-
