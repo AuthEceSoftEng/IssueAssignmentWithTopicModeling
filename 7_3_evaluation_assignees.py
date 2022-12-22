@@ -30,7 +30,7 @@ for num_topics in topics:
 	y_pred = label_binarizer.transform(y_pred)
 	accuracy.append(accuracy_score(y_true, y_pred))
 
-fig, ax = plt.subplots(figsize=(4.4, 3.0))
+fig, ax = plt.subplots(figsize=(4.4, 2.8))
 ax.plot(topics, accuracy, '-')
 #ax.set_xticks(np.arange(4, 21))
 #ax.set_xticklabels(np.arange(4, 21))
